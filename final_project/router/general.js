@@ -39,7 +39,7 @@ public_users.get('/', async function (req, res) {
 });
 
 
-// Funcint implementing a Promise to get book details based on ISBN.
+// Get book details based on the ISBN
 function getBookDetailsFromISBN(isbn) {
   return new Promise((resolve, reject) => {
     //  Check if ISPN is part of the parameters in the database and that it is a valid value for any of the value objects.
@@ -63,6 +63,7 @@ public_users.get('/isbn/:isbn', async function (req, res) {
     res.send(500).json({ message: "Unable to find the requested ISBN.\nError: " + error })
   };
 });
+
 
 // Get book details based on author
 function getBookDetailsFromAuthor(author) {
